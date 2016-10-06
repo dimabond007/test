@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\topic;
+use App\block;
+
 class TopicController extends Controller
 {
     /**
@@ -25,7 +28,8 @@ class TopicController extends Controller
      */
     public function create()
     {
-        //
+        $topic = new topic;
+        return view('topic.create',['topic'=>$topic,'page'=>'Add Topic']);
     }
 
     /**
@@ -36,7 +40,14 @@ class TopicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $topic= new topic;
+        $topic->topicname=$request->topicname;
+        if(!$topic->save())
+        {
+            $errors=$topic->getErrors();
+            return redirect()->action('TopicController@create')->with('errors',$errors)->withInput();
+        }
+        return redirect()->action('TopicController@create')->with('massege','New topic '.$topic->topicname.' was added with id='.$topic->id.'!');
     }
 
     /**
