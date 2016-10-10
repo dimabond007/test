@@ -1,0 +1,12 @@
+[1mdiff --git a/resources/views/layout/master.blade.php b/resources/views/layout/master.blade.php[m
+[1mindex b7ec050..ddf0494 100644[m
+[1m--- a/resources/views/layout/master.blade.php[m
+[1m+++ b/resources/views/layout/master.blade.php[m
+[36m@@ -9,6 +9,7 @@[m
+ <body>[m
+ 	@section('menu')[m
+ 	<div class='container'>[m
+[32m+[m		[32m<div></div>[m
+ 		<ul class='nav nav-pills'>[m
+ 			<li><a href="{{url('home')}}">Home</a></li>			[m
+ 			<li><a href="{{url('addcountry')}}">Add New</a></li>[m

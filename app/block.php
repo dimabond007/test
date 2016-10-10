@@ -15,4 +15,5 @@ class block extends Model
 	'title'=>['required','max:100'],
 	'topicid'=>['required'],
 	'content'=>['required']];
+	
 }

@@ -11,7 +11,8 @@
 	<div class='container'>
 		<ul class='nav nav-pills'>
 			<li><a href="{{url('topic')}}">Home</a></li>			
-			<li><a href="{{url('topic/create')}}">Add new topic</a></li>
+			<li {{$page=='Add Topic' ? 'class = active' : ''}}><a href="{{url('topic/create')}}">Add new topic</a></li>
+			<li {{$page=='Add block' ? 'class = active' : ''}}><a href="{{url('block/create')}}">Add new block</a></li>
 		</ul>
 	</div>	
 	<div class="container col-md-12 col-lg-12 col-sm-12">
