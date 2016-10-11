@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{asset('css/css.css')}}">
 	<script type="text/javascript" src="{{asset('js/bootstrap.min.js')}}"></script>
 </head>
 <body>

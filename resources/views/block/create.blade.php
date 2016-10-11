@@ -22,7 +22,7 @@
 		@endif
 	</div>
 	</div>
-	<div class="row">
+	<div class="row btn col-lg-3">
 		{!! Form::model($block,['action'=>'BlockController@store','files'=>true,'class'=>'form']) !!}
 		<div class="form form-group">
 			{!! Form::label('topicid','Select topic') !!}

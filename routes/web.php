@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::resource('topic','TopicController');
 Route::resource('block','BlockController');
+Route::get('/','TopicController@index');
+Route::post('topic/search','TopicController@search');
