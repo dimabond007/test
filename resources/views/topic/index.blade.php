@@ -33,18 +33,31 @@
 			@if($id!=0)
 				@foreach($blocks as $b)
 					<div class="content" >
-						<h2>
-							{{$b->title}}
-						</h2>
-
+						<div>
+							<h2>
+								{{$b->title}}
+							</h2>
+							
+						</div>
 						@if($b->imagePath !="")
-						<a style="float:left; margin-right:20px" href="{{url($b->imagePath)}}" target="_blank" class="wrap-image">
+						<a style="float:left; margin-right:20px" href="{{url($b->imagePath)}}" class="wrap-image">
 							<img src="{{asset($b->imagePath)}}" height="150px" alt="">
 						</a>
 						@endif
-						<p class="pre_text" >{{$b->content}}</p>
-							<br style="clear:left" >
+
+						<pre class="pre_text" >{{$b->content}}</pre>
+						{!! Form::model($b,array('route'=>array('block.update',$b->id),'method'=>'PUT'))!!}
+							<a style="float:right;" href="{{url('block/'.$b->id.'/edit')}}" class="btn btn-xs btn-info">Edit</a>
+						{!! Form::close()!!}
+						
+						{!! Form::open(array('route'=>array('block.destroy',$b->id)))!!}
+							{!! Form::hidden('_method','DELETE')!!}
+							{!! Form::submit("Delete",['style'=>'float:right;','class'=>'btn btn-xs btn-danger']) !!}
+						{!! Form::close()!!}
+							<br style="clear:right">
+
 					</div>
+					<hr>
 				@endforeach
 			@endif
 		</div>
